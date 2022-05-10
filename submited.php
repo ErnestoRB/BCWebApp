@@ -39,7 +39,7 @@ html>
   	<body>
   		<div class="primer_recuadro centrar">
   			Tus datos han sido enviados correctamente<br><br>
-  			<form action="main_index.php"><input type="submit" value="Regresar"> </form>
+  			<form action="index.php"><input type="submit" value="Regresar"> </form>
   			<?php
   				echo $nombre."|".$apellidoP."|".$apellidoM."|".$calle."|".$no."|".$edad."|".$telefono."|".$email;
   			?>
