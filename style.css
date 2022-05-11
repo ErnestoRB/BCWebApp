@@ -1,0 +1,78 @@
+body,
+html {
+  background: linear-gradient(45deg, royalblue, navy, indigo, purple);
+  height: 900px;
+  font-family: Dosis, Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 10pt;
+}
+
+input {
+  border-color: black;
+  border-width: 0.5px;
+  border-radius: 0;
+  padding: 2px;
+  outline: none;
+}
+
+div.primer_recuadro {
+  position: relative;
+  top: 20px;
+  left: 45px;
+
+  border-radius: 20px;
+
+  width: 1230px;
+  background-color: #ffffff;
+  padding: 1em;
+}
+
+div.tabla_principal {
+  position: relative;
+  top: 90px;
+  display: table;
+
+  width: 1200px;
+
+  margin-bottom: 3px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 30px 10px 30px;
+  border-radius: 20px;
+
+  background-color: #ffffff;
+  text-align: left;
+}
+
+div.titulo_cuadro {
+  position: relative;
+
+  border-radius: 20px;
+
+  width: 1200px;
+  background: linear-gradient(45deg, royalblue, purple);
+  padding: 1em;
+}
+
+.imagen_logo {
+  position: relative;
+  left: 30px;
+  float: left;
+  width: 192px;
+  height: 90px;
+}
+
+.centrar {
+  text-align: center;
+}
+
+input.invalid {
+  border-left-color: red;
+  border-left-width: 4px;
+  border-left-style: solid;
+}
+
+input.valid {
+  border-left-color: lime;
+  border-left-width: 4px;
+  border-left-style: solid;
+}
