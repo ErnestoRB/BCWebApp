@@ -1,4 +1,4 @@
-html>
+<html>
 	<?php
 		$nombre=$_POST["nombre"];
 		$apellidoP=$_POST["apellido1"];
@@ -11,37 +11,36 @@ html>
 	?>
 	<head>	
    	 <title>Datos enviados</title>
-    		<style type="text/css" media="screen">
-
-  		body, html {
-  			background: linear-gradient(45deg, royalblue, navy, indigo, purple);
-  			height: 900px;
-    			font-family: Tahoma, fantasy;
-    			font-size: 10pt;
-  			}
-  			
-  		div.primer_recuadro{
-  			position: relative;
-    			top: 20px; left: 45px;
-    			
-    			border-radius: 20px;
-  			
-  			width: 1230px;
-  			background-color: #ffffff;
-  			padding: 1em;
-  		}
-  		
-  		.centrar{
-  			text-align: center;
-  		}
-  	</style>
+		<link rel="stylesheet" href="submited.css">
   	</head>
   	<body>
-  		<div class="primer_recuadro centrar">
-  			Tus datos han sido enviados correctamente<br><br>
-  			<form action="index.php"><input type="submit" value="Regresar"> </form>
+  		<div class="primer_recuadro flex flex-center flex-wrap">
+			  <div class="centrar w-full"> 
+				<span >
+					Tus datos han sido enviados correctamente
+				<span>
+			  </div>
+			  <a href="index.php">Regresar</a>
+			  <form class="flex flex-wrap">
+				<label>Nombre</label>
+				<input type="text" disabled="true" value="<?= $nombre ?>">
+				<label>Apellido Paterno</label>
+				<input type="text" disabled="true" value="<?= $apellidoP ?>">
+				<label>Apellido Materno</label>
+				<input type="text" disabled="true" value="<?= $apellidoM ?>">
+				<label>Calle</label>
+				<input type="text" disabled="true" value="<?= $calle ?>">
+				<label>#</label>
+				<input type="number" disabled="true" value="<?= $no ?>">
+				<label>Edad</label>
+				<input type="number" disabled="true" value="<?= $edad ?>">
+				<label>Telefono</label>
+				<input type="tel" disabled="true" value="<?= $telefono ?>">
+				<label>Email</label>
+				<input type="email" disabled="true" value="<?= $email ?>">
+				</form>
   			<?php
-  				echo $nombre."|".$apellidoP."|".$apellidoM."|".$calle."|".$no."|".$edad."|".$telefono."|".$email;
+				#  echo $nombre."|".$apellidoP."|".$apellidoM."|".$calle."|".$no."|".$edad."|".$telefono."|".$email;
   			?>
   		</div>
   		

@@ -1,0 +1,58 @@
+input[disabled] {
+  display: block;
+}
+
+body,
+html {
+  background: linear-gradient(45deg, royalblue, navy, indigo, purple);
+  height: 900px;
+  font-family: Tahoma, fantasy;
+  font-size: 10pt;
+}
+
+div.primer_recuadro {
+  position: relative;
+  top: 20px;
+  left: 45px;
+
+  border-radius: 20px;
+
+  width: 1230px;
+  background-color: #ffffff;
+  padding: 1em;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  items-center: center;
+  justify-content: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  background-color: red;
+  border: 1px solid black;
+  padding-inline: 2px;
+  padding-block: 4px;
+}
+
+.centrar {
+  text-align: center;
+}
+
+.w-full {
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  display: block;
+}

@@ -2,7 +2,7 @@
 	<head>	
    	 <title>Inserta tus datos!</title>
 		<link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
-    	<link rel="stylesheet" href="style.css">	
+    	<link rel="stylesheet" href="index.css">	
 		<script src="validation.js" defer></script>
   	</head>
 	<body>
@@ -14,7 +14,7 @@
 		
 		<div class="tabla_principal">
 			<div class="centrar titulo_cuadro">
-				<font size=3 color="#ffffff">Por favor, llene los datos requeridos a continuación:<br></font>
+				<b style="color:white;">Por favor, llene los datos requeridos a continuación:<br></b>
 			</div>
 			
 			<br>
