@@ -1,12 +1,37 @@
-const emailInput = document.getElementById("email");
+const patternElements = document.querySelectorAll("input[pattern]");
+const requiredElements = document.querySelectorAll("input[required]");
+const maxLengthElements = document.querySelectorAll("input[maxLength]");
 
-emailInput.addEventListener("input", (event) => {
-  const invalid = emailInput.validity.patternMismatch;
-  if (invalid) {
-    emailInput.classList.remove("valid");
-    emailInput.classList.add("invalid");
-  } else {
-    emailInput.classList.add("valid");
-    emailInput.classList.remove("invalid");
-  }
+console.log(patternElements, requiredElements);
+
+document.querySelectorAll("input").forEach((input) => {
+  input.addEventListener("input", (event) => {
+    const element = event.target;
+    if (element.checkValidity()) {
+      element.classList.add("valid");
+      element.classList.remove("invalid");
+    }
+  });
+});
+
+requiredElements.forEach((element) => {
+  element.addEventListener("input", (event) => {
+    const element = event.target;
+    const invalid = element.validity.valueMissing;
+    if (invalid) {
+      element.classList.remove("valid");
+      element.classList.add("invalid");
+    }
+  });
+});
+
+patternElements.forEach((element) => {
+  element.addEventListener("input", (event) => {
+    const element = event.target;
+    const invalid = element.validity.patternMismatch;
+    if (invalid) {
+      element.classList.remove("valid");
+      element.classList.add("invalid");
+    }
+  });
 });

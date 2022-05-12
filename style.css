@@ -10,7 +10,8 @@ input {
   border-color: black;
   border-width: 0.5px;
   border-radius: 0;
-  padding: 2px;
+  padding-inline-start: 8px;
+  padding-block: 8px;
   outline: none;
 }
 
@@ -65,6 +66,14 @@ div.titulo_cuadro {
   text-align: center;
 }
 
+input[required] {
+  outline: 0.5px solid black;
+}
+
+input:focus {
+  filter: brightness(90%);
+}
+
 input.invalid {
   border-left-color: red;
   border-left-width: 4px;
@@ -75,4 +84,12 @@ input.valid {
   border-left-color: lime;
   border-left-width: 4px;
   border-left-style: solid;
+}
+
+input[type="submit"] {
+  background-color: limegreen;
+  outline: none;
+  border: 1px solid black;
+  padding-block: 8px;
+  padding-inline: 16px;
 }
