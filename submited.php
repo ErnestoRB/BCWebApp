@@ -40,8 +40,8 @@
 				<input type="email" disabled="true" value="<?= $email ?>">
 				</form>
   			<?php
-				$validacion = shell_exec("python process.py $nombre'|'$apellidoP'|'$apellidoM'|'$calle'|'$no'|'$edad'|'$telefono'|'$email");
-				print($validacion);
+				shell_exec("python process.py $nombre'|'$apellidoP'|'$apellidoM'|'$calle'|'$no'|'$edad'|'$telefono'|'$email");
+				
   			?>
   		</div>
   		
