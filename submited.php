@@ -15,7 +15,12 @@
   	</head>
   	<body>
   		<div class="primer_recuadro flex flex-center flex-wrap">
-			  <div class="centrar w-full"> 
+  			<?php
+			  	$comando = "python3 process.py '$nombre|$apellidoP|$apellidoM|$calle|$no|$edad|$telefono|$email' ";
+				exec($comando, $out, $ret);
+				if ($ret == 0) {
+  			?>
+				<div class="centrar w-full"> 
 				<span >
 					Tus datos han sido enviados correctamente
 				<span>
@@ -39,11 +44,10 @@
 				<label>Email</label>
 				<input type="email" disabled="true" value="<?= $email ?>">
 				</form>
-  			<?php
-				shell_exec("python process.py $nombre'|'$apellidoP'|'$apellidoM'|'$calle'|'$no'|'$edad'|'$telefono'|'$email");
-				
-  			?>
+
   		</div>
-  		
+  		<?php } else { ?>
+			<span class="error">Error al guardar tu información</span>
+		<?php  } ?>
   	</body>
 <html>
