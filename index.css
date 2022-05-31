@@ -62,6 +62,14 @@ div.titulo_cuadro {
   height: 90px;
 }
 
+.imagen_BC {
+  position: relative;
+  left: 820px;
+  float: left;
+  width: 192px;
+  height: 90px;
+}
+
 .centrar {
   text-align: center;
 }

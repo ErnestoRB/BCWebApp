@@ -7,10 +7,12 @@
   	</head>
 	<body>
 		
-		<div class="primer_recuadro imagen_logo">
-			<img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Logo_UAA.png"
-				alt="UAA Logo" class="imagen_logo"/>	
+		<div class="primer_recuadro imagen_logo imagen_BC">
+			<img src="resources/Logo_UAA.png"
+				alt="UAA Logo" class="imagen_logo"/>
+			<img src="resources/BCLogo.png" alt="BC Logo" class="imagen_BC"/>	
 		</div>
+		
 		
 		<div class="tabla_principal">
 			<div class="centrar titulo_cuadro">
