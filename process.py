@@ -5,8 +5,8 @@ import errno
 if len(sys.argv) < 2:
 	exit(1)
 
-
 datos_usuario = sys.argv[1]
+nombre = datos_usuario.split('|')[0].replace(' ', '_')
 
 try: #crea nueva carpeta para guardar los datos, ignora si ya existe
 	os.mkdir('users_data')
@@ -14,21 +14,13 @@ except OSError as e:
 	if e.errno != errno.EEXIST:
 		raise
 
-if not os.path.exists('users_data/data.txt'):
-	open("users_data/data.txt", 'w').close()
+if not os.path.exists(f'users_data/{nombre}.txt'):
+	open(f"users_data/{nombre}.txt", 'w').close()
 
 try:
-	archivo = open('users_data/data.txt', 'r')
+	archivo = open(f'users_data/{nombre}.txt', 'a')
 except Exception as e:
 	print("Error al abrir el archivo: ", e)
 else:
-	nReg = len(archivo.readlines())
-	archivo.close()
-
-try:
-	archivo = open('users_data/data.txt', 'a')
-except Exception as e:
-	print("Error al abrir el archivo: ", e)
-else:
-	archivo.write(str(nReg) + "|" + datos_usuario + '\n') # escribe un identificador
+	archivo.write(datos_usuario + '\n')
 	archivo.close()

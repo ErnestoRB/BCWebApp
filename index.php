@@ -23,9 +23,9 @@
 			<form method="post" action="submited.php">
 				<fieldset>
 					<legend>Complete sus datos correctamente </legend>
-					Nombre(s): <input  name="nombre" id="nombre" type="text" required>
-					Apellido paterno: <input  name="apellido1" id="apellido1" type="text" required>
-					Apellido materno: <input  name="apellido2" id="apellido2" type="text">
+					Nombre(s): <input  name="nombre" id="nombre" type="text" pattern="^[a-zA-Z ]+[^|]?$" required>
+					Apellido paterno: <input  name="apellido1" id="apellido1" type="text" pattern="^[a-zA-Z ]+[^|]?$" required>
+					Apellido materno: <input  name="apellido2" id="apellido2" type="text" pattern="^[a-zA-Z ]+[^|]?$">
 					<br><br> E-mail: <input  type="email" id="email" name="email" pattern="^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$" required>
 					Edad:
 					<select id="edad" name="edad">
