@@ -1,6 +1,5 @@
 <?php 
     $user = $_GET["user"];
-    var_dump($user);
 ?>
 
 <!DOCTYPE html>
@@ -14,11 +13,16 @@
 <body>
     <?php 
         if($user != NULL) {
-            echo $user;
             $archivo = $user . ".txt";
-            exec("python3 readFile.py '$value'", $fileCont, $retFile);
-            $fields = preg_split("|", $fileCont);
-            if( $retFile == 0){?>
+            exec("python3 readFile.py users_data/$archivo", $fileArr, $retFile);
+            
+            if( $retFile == 0){
+                $fileCont = "";
+                foreach ($fileArr as $key => $line) {
+                    $fileCont .= $line;
+                }
+                $fields = explode("|", $fileCont);
+                ?>
                 <form class="flex flex-wrap">
 				<label>Nombre</label>
 				<input type="text" disabled="true" value="<?= $fields[0] ?>">
@@ -37,6 +41,7 @@
 				<label>Email</label>
 				<input type="email" disabled="true" value="<?= $fields[7] ?>">
 				</form>
+                <a href="registers.php">Regresar</a>
             <?php
             }
 
@@ -53,6 +58,7 @@
 
                     <?php
                 }
+                
                 /* foreach ($array as $line => $value) {
                     exec("python3 readFile.py $value", $fileCont, $retFile);
                     if( $retFile == 0){?>
@@ -64,5 +70,7 @@
             }
         }
     ?>
+                <a href=".">Regresar</a>
+
 </body>
 </html>
