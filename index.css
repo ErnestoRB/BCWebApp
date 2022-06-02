@@ -10,13 +10,15 @@ body
     justify-content: center;
     align-items: center;
     background-image: url('resources/uaa.jpg');
+    backdrop-filter: blur(3px);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .options {
+    border-radius: 4px;
     background-color: #ffffffc0;
-    padding: 8px;
+    padding: 2rem 4rem;
     width: max-content;
     height: max-content;
     display: flex;
