@@ -2,7 +2,7 @@
 	<head>	
    	 <title>Inserta tus datos!</title>
 		<link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
-    	<link rel="stylesheet" href="index.css">	
+    	<link rel="stylesheet" href="register.css">	
 		<script src="validation.js" defer></script>
   	</head>
 	<body>

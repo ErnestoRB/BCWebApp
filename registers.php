@@ -40,25 +40,32 @@
 				<input type="tel" disabled="true" value="<?= $fields[6] ?>">
 				<label>Email</label>
 				<input type="email" disabled="true" value="<?= $fields[7] ?>">
+                <a href='registers.php'>Regresar</a>
 				</form>
-                <a href="registers.php">Regresar</a>
             <?php
             }
 
         } else {
             exec("ls -1 users_data/", $archivos, $ret);
             if($ret == 0) {
-                foreach ($archivos as $lineNumber => $value) {
-                    $usuario = str_replace('.txt', '',$value);
-                    ?> 
-                    <div>
-                    <span><?= str_replace('_', '', $usuario) ?></span>    
-                    <a href="?user=<?=$usuario?>" >Ver datos</a>
-                    <div>
+                if(count($archivos) > 0) {
+                    echo "<ul>";
+                    foreach ($archivos as $lineNumber => $value) {
+                        $usuario = str_replace('.txt', '',$value);
+                        ?> 
+                        <li>
+                            <span><?= str_replace('_', '', $usuario) ?></span>    
+                            <a href="?user=<?=$usuario?>" >Ver datos</a>
+                        </li>
 
+                        <?php
+                    }
+                    echo "</ul><a href='.'>Regresar</a>";
+                } else {
+                    ?>
+                    <span>No se ha registrado nada aún</span>
                     <?php
                 }
-                
                 /* foreach ($array as $line => $value) {
                     exec("python3 readFile.py $value", $fileCont, $retFile);
                     if( $retFile == 0){?>
@@ -67,10 +74,12 @@
                     <?php
                     }
                 } */
+            } else {
+                ?>
+                <span>Error</span>
+                <?php
             }
         }
     ?>
-                <a href=".">Regresar</a>
-
 </body>
 </html>

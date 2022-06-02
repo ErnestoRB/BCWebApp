@@ -25,7 +25,7 @@
 					Tus datos han sido enviados correctamente
 				<span>
 			  </div>
-			  <a href="index.php">Regresar</a>
+			  <a href=".">Regresar</a>
 			  <form class="flex flex-wrap">
 				<label>Nombre</label>
 				<input type="text" disabled="true" value="<?= $nombre ?>">
