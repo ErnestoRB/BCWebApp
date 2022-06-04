@@ -11,7 +11,7 @@
 	?>
 	<head>	
    	 <title>Datos enviados</title>
-		<link rel="stylesheet" href="submited.css">
+		<link rel="stylesheet" href="registers-and-submited.css">
   	</head>
   	<body>
   		<div class="primer_recuadro flex flex-center flex-wrap">

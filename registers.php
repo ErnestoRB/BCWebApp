@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="registers-and-submited.css">
     <title>Usuarios registrados</title>
 </head>
 <body>
@@ -24,6 +25,7 @@
                 $fields = explode("|", $fileCont);
                 ?>
                 <form class="flex flex-wrap">
+                <div class="primer_recuadro">
 				<label>Nombre</label>
 				<input type="text" disabled="true" value="<?= $fields[0] ?>">
 				<label>Apellido Paterno</label>
@@ -40,12 +42,19 @@
 				<input type="tel" disabled="true" value="<?= $fields[6] ?>">
 				<label>Email</label>
 				<input type="email" disabled="true" value="<?= $fields[7] ?>">
-                <a href='registers.php'>Regresar</a>
+                <br>
+                <div class="centrar">
+                <a href='registers.php'>
+                	<button>Regresar</button>
+                </a>
+                </div>
 				</form>
+		</div>
             <?php
             }
 
         } else {
+            echo "<div class='primer_recuadro'>";
             exec("ls -1 users_data/", $archivos, $ret);
             if($ret == 0) {
                 if(count($archivos) > 0) {
@@ -54,16 +63,25 @@
                         $usuario = str_replace('.txt', '',$value);
                         ?> 
                         <li>
-                            <span><?= str_replace('_', '', $usuario) ?></span>    
-                            <a href="?user=<?=$usuario?>" >Ver datos</a>
+                            <span><?= str_replace('_', '', $usuario) ?></span>
+                               <br>
+                            	<a href="?user=<?=$usuario?>" >
+                            		<button>Ver datos</button>
+                            	</a>
                         </li>
-
+			<br>
                         <?php
                     }
-                    echo "</ul><a href='.'>Regresar</a>";
+                    echo "</ul>";
+                    echo "<div class='centrar'>";
+                    echo "<a href='.'><button>Regresar</button></a>";
+                    echo "</div>";
+                    echo "</div>";
                 } else {
                     ?>
-                    <span>No se ha registrado nada aún</span>
+                    <center>
+                    	<span>No se ha registrado nada aún</span>
+                    <center>
                     <?php
                 }
                 /* foreach ($array as $line => $value) {
@@ -76,7 +94,9 @@
                 } */
             } else {
                 ?>
-                <span>Error</span>
+                <center>
+                	<span>Error</span>
+                </center>
                 <?php
             }
         }
